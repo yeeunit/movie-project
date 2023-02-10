@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+html, body, h1 {
+  margin: 0;
+  padding: 0;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-item {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+  .banner::before{
+    position: absolute; 
+    width: 100%;
+    height: 600px;
+    content: '';
+    background: linear-gradient(to right, black, transparent);
+}
+
+.banner_contents{
+  color: white;
+  width: 70%;
+  padding-left: 100px;
+  /* height: 100%; */
+  /* background-color: blueviolet; */
+  /* padding-top: 100px; */
+  z-index: 99;
+  /* text-align: center; */
+}
+
+.home_wrapper{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  /* height: 100vh; */
+  width: 100vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.movie_card {
+  width: 300px;
+  height: 200px;
+  /* border: 1px solid white; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  /* padding: 10px; */
+  cursor: pointer;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie_card_overview {
+  display: block;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(43,41,41,0.9);
+  border-radius: 15px;
+  padding: 10px;
+
+}
+
+.movie_card:hover .overlay {
+  opacity: 1;
 }
