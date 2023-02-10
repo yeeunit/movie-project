@@ -1,8 +1,12 @@
 import React from 'react'
 import Badge from 'react-bootstrap/Badge';
+import { useSelector } from 'react-redux';
 
 const MovieCard = ({item}) => {
     // console.log({item})
+    const { genreList } = useSelector(state => state.movie )
+
+
   return (
     <>
     <div 
@@ -17,10 +21,10 @@ const MovieCard = ({item}) => {
    
         <div className='overlay'>
             <h2>{item.title}</h2>  
-            <div>{item.genre_ids.map((item)=>(
-                <span>
-                    <Badge bg="danger">{item}</Badge>
-                </span>
+            <div>
+                {item.genre_ids.map((i)=>(
+                    <Badge bg="danger">
+                        {genreList.find((item) => item.id === i).name}</Badge>
                 ))}
             </div>
             <div>⭐️ {item.vote_average}</div>
