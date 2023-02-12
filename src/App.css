@@ -1,7 +1,8 @@
-html, body, h1 {
+html,
+body,
+h1 {
   margin: 0;
   padding: 0;
-
 }
 
 .nav-item {
@@ -21,18 +22,17 @@ html, body, h1 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
-  .banner::before{
-    position: absolute; 
-    width: 100%;
-    height: 600px;
-    content: '';
-    background: linear-gradient(to right, black, transparent);
+.banner::before {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  content: "";
+  background: linear-gradient(to right, black, transparent);
 }
 
-.banner_contents{
+.banner_contents {
   color: white;
   width: 70%;
   padding-left: 100px;
@@ -43,7 +43,7 @@ html, body, h1 {
   /* text-align: center; */
 }
 
-.home_wrapper{
+.home_wrapper {
   display: flex;
   flex-direction: column;
   background-color: black;
@@ -62,7 +62,6 @@ html, body, h1 {
   border-radius: 15px;
   /* padding: 10px; */
   cursor: pointer;
-
 }
 
 .movie_card_overview {
@@ -74,14 +73,13 @@ html, body, h1 {
   word-break: break-all;
 }
 
-.overlay{
+.overlay {
   width: 100%;
   height: 100%;
   opacity: 0;
-  background: rgba(43,41,41,0.9);
+  background: rgba(43, 41, 41, 0.9);
   border-radius: 15px;
   padding: 10px;
-
 }
 
 .movie_card:hover .overlay {
