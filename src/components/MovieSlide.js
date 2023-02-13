@@ -21,15 +21,25 @@ const MovieSlide = ({movies}) => {
           breakpoint: { max: 1024, min: 464 },
           items: 2
         },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
 
       };
      
   return (
   <>
-        <div>MovieSlide</div>
 
       {movies.results  &&
-        <Carousel responsive={responsive}>
+        <Carousel 
+        responsive={responsive}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        transitionDuration={500} 
+        // rtl={true}
+        >
          
               {movies.results.map((item)=>(
                 <MovieCard item={item} />

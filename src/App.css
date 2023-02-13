@@ -51,6 +51,16 @@ h1 {
   width: 100vw;
   color: white;
 }
+.movie_slide_wrapper{
+  /* background-color: red; */
+  padding: 50px;
+}
+
+/* MovieCard.js */
+
+.movie_slide{
+  margin-bottom: 40px;
+}
 
 .movie_card {
   width: 300px;
@@ -79,9 +89,28 @@ h1 {
   opacity: 0;
   background: rgba(43, 41, 41, 0.9);
   border-radius: 15px;
-  padding: 10px;
+  padding: 14px;
 }
 
 .movie_card:hover .overlay {
   opacity: 1;
+}
+
+.release_date {
+  font-size: 12px;
+}
+
+
+.genre_badge{
+  margin-right: 6px;
+}
+
+
+/* movie_search_page */
+.movie_search_page{
+  padding: 50px;
+}
+
+.todo_list_page{
+  padding: 50px;
 }

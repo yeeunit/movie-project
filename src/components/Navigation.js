@@ -10,9 +10,10 @@ const Navigation = () => {
       <Container>
         <Navbar.Brand href="#home">
           <img 
-            height={50} 
-            src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-            alt='nav image'
+            height={30} 
+            // width={120}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
+            alt='logo'
             />
             </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarscroll" />

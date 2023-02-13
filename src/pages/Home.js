@@ -34,20 +34,28 @@ const Home = () => {
 
   return (
     <>
-      {/* <h1>HOME</h1> */}
       <div className="home_wrapper">
         {/* {popularMovies.results &&  */}
         <Banner movie={popularMovies.results[0]} />
         {/* } */}
 
-        <h1>Popular Movies</h1>
-        <MovieSlide movies={popularMovies} />
+        <div className="movie_slide_wrapper">
 
-        <h1>Top Rated Movies</h1>
-        <MovieSlide movies={topRatedMovies} />
-
-        <h1>Upcoming Movies</h1>
-        <MovieSlide movies={upcomingMovies} />
+            <div className="movie_slide">
+              <h1>Popular Movies</h1>
+              <MovieSlide movies={popularMovies} />
+            </div>
+          
+            <div className="movie_slide">
+              <h1>Top Rated Movies</h1>
+              <MovieSlide movies={topRatedMovies} />
+            </div>
+  
+            <div className="movie_slide">
+              <h1>Upcoming Movies</h1>
+              <MovieSlide movies={upcomingMovies} />
+            </div>
+        </div>
       </div>
     </>
   );

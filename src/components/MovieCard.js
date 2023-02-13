@@ -10,7 +10,7 @@ const MovieCard = ({ item }) => {
   return (
     <>
       <div
-        className="movie_card"
+        className="movie_card" 
         style={{
           backgroundImage:
             "url(" +
@@ -19,17 +19,17 @@ const MovieCard = ({ item }) => {
         }}
       >
         <div className="overlay">
-          <h2>{item.title}</h2>
+          <h3>{item.title}</h3>
           <div>
             {item.genre_ids.map((i) => (
-              <Badge bg="danger">
+              <Badge bg="danger" className='genre_badge' >
                 {genreList.find((item) => item.id === i).name}
               </Badge>
             ))}
           </div>
           <div>⭐️ {item.vote_average}</div>
           <span className="movie_card_overview"> {item.overview}</span>
-          <div> 개봉일{item.release_date}</div>
+          <div className='release_date'> Release Date: {item.release_date}</div>
 
           <div>{item.adult ? "청불" : ""}</div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 const MovieSearch = () => {
@@ -15,10 +16,14 @@ const MovieSearch = () => {
 
   return (
     <>
-      <h1>MovieSearch</h1>
-      <div>
-        <button>검색하기</button>
+      <div className="movie_search_page">
+      <h1>Movie Search Page</h1>
+
         <input type="text" onKeyPress={(event) => search(event)} />
+        {/* <button className="serchButton">검색하기</button> */}
+        <Button variant='danger'>검색하기</Button>
+
+
       </div>
     </>
   );
