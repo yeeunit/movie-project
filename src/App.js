@@ -19,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
+        {/* <Route path="/search" exact={true} element={Search}></Route> */}
       </Routes>
 
       {/* <TodoList /> */}

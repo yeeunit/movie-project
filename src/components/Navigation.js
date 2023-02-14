@@ -8,7 +8,7 @@ const Navigation = () => {
     <>
     <Navbar bg="dark" variant='dark' expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img 
             height={30} 
             // width={120}
