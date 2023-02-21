@@ -5,7 +5,7 @@ import MovieCard from './MovieCard';
 
 const MovieSlide = ({movies}) => {
 
-    console.log('movies', movies)
+    // console.log('movies', movies)
 
     const responsive = {
         superLargeDesktop: {

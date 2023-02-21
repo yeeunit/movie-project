@@ -1,15 +1,22 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import { useSelector } from "react-redux";
-// import {useSearchParams} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ item }) => {
   // console.log({item})
   const { genreList } = useSelector((state) => state.movie);
-
+  const navigate = useNavigate()
+  const onClickMove = (event) => {
+    navigate(`/movies/${item.id}`)
+  }
+  
   return (
     <>
       <div
+        onClick={onClickMove}
+
+        // onClick={(e)=>{clickHandler(params, e)}}
         className="movie_card" 
         style={{
           backgroundImage:
@@ -18,7 +25,10 @@ const MovieCard = ({ item }) => {
             ")",
         }}
       >
-        <div className="overlay">
+        <div 
+        className="overlay"
+        
+        id={item.id}>
           <h3>{item.title}</h3>
           <div>
             {item.genre_ids.map((i) => (

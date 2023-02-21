@@ -6,7 +6,7 @@ import MovieSlide from "../components/MovieSlide";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useSearchParams } from "react-router-dom";
 
-const API_KEY = "f914afd35da285b8249f50aae6a678d5";
+// const API_KEY = "f914afd35da285b8249f50aae6a678d5";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,9 +20,9 @@ const Home = () => {
 
   const [query, setQuery] = useSearchParams();
   let searchQuery = query.get("q") || "";
-  console.log("쿼리값은??", searchQuery);
+  // console.log("쿼리값은??", searchQuery);
   // let url = `http://localhost:5000/movies?q=${searchQuery}`;
-  let url = `https://api.themoviedb.org/3"/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1?q=${searchQuery}`;
+  // let url = `https://api.themoviedb.org/3"/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1?q=${searchQuery}`;
 
   useEffect(() => {
     dispatch(movieAction.getMovies());
@@ -35,8 +35,9 @@ const Home = () => {
   return (
     <>
       <div className="home_wrapper">
-        {/* {popularMovies.results &&  */}
+        {popularMovies.results && 
         <Banner movie={popularMovies.results[0]} />
+        } 
         {/* } */}
 
         <div className="movie_slide_wrapper">

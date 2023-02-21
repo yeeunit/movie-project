@@ -17,7 +17,7 @@ export const TodoList = () => {
     }, [])
 
 const fetchData = () => {
-    fetch('http://localhost:3001/api/todo')
+    fetch(SERVER_URL)
     .then((response) => response.json())
     .then((data)=> setTodoList(data))
     }
