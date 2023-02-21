@@ -11,6 +11,7 @@ import Navigation from "./components/Navigation";
 import ServerTest from "./pages/ServerTest";
 import MovieDB from "./pages/MovieDB";
 import MovieDB_Detail from "./pages/MovieDB_Detail";
+import MovieDB_Search from "./pages/MovieDB_Search";
 
 function App() {
   return (
@@ -22,11 +23,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
-        {/* <Route path="/search" exact={true} element={Search}></Route> */}
+        <Route path="/movie/search" element={<MovieDB_Search />} />
         <Route path="/calculator" element={<ServerTest />} />
         <Route path="/moviedb" element={<MovieDB />} />
         <Route path="/moviedb/:id" element={<MovieDB_Detail />} />
-
       </Routes>
 
       {/* <TodoList /> */}

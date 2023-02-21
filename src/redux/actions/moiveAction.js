@@ -1,7 +1,7 @@
 import api from "../api";
 
-const API_KEY =  process.env.REACT_APP_API_KEY
-// const API_KEY = "f914afd35da285b8249f50aae6a678d5";
+// const API_KEY =  process.env.REACT_APP_API_KEY
+const API_KEY = "f914afd35da285b8249f50aae6a678d5";
 
 function getMovies() {
   return async (dispatch) => {
@@ -49,7 +49,6 @@ function getMovies() {
     }
 
     // console.log('popularMovies', popularMovies)
-
   };
 }
 
