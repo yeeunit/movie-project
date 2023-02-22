@@ -21,12 +21,12 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetail />} />
-        <Route path="/movie/search" element={<MovieDB_Search />} />
-        <Route path="/calculator" element={<ServerTest />} />
         <Route path="/moviedb" element={<MovieDB />} />
         <Route path="/moviedb/:id" element={<MovieDB_Detail />} />
+        <Route path="/movie/search?" element={<MovieDB_Search />} />
+        {/* <Route path="/todolist" element={<Movies />} /> */}
+        {/* <Route path="/calculator" element={<ServerTest />} /> */}
       </Routes>
 
       {/* <TodoList /> */}

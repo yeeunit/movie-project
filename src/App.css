@@ -119,3 +119,16 @@ h1 {
 .movie_detail_page{
   padding: 50px;
 }
+
+
+.db_list_style{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.db_box{
+  width: 250px;
+  border: 1px solid black;
+
+}

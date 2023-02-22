@@ -20,18 +20,17 @@ const Navigation = () => {
   const [results, setResults] = useState([]);
 
   const onChangeKeyword = (event) => {
+    event.preventDefault();
     setKeyword(event.target.value);
-    // console.log("keyword", keyword);
   };
 
   const getSearch = async () => {
     let url = `https://api.themoviedb.org/3/search/company?api_key=${API_KEY}&query=${keyword}&page=1`;
     let response = await fetch(url);
     let data = await response.json();
-    // console.log(data);
-    setResults(data);
+    setResults(data.results);
   };
-  // console.log("검색결과", results);
+  // console.log("data.results", results);
 
   const onClickSearch = (event) => {
     getSearch();
@@ -79,7 +78,12 @@ const Navigation = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* {results && <MovieDB_Search data={results} />} */}
+      
+      {results && 
+        <div style={{display:"none"}}>
+        <MovieDB_Search results={results} />
+        </div>
+      }
     </>
   );
 };

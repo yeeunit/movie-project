@@ -3,9 +3,25 @@ import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 // const API_KEY = "f914afd35da285b8249f50aae6a678d5";
 
-const MovieDB_Search = ({ data }) => {
-  console.log(data);
-  // console.log("data", data.results[0].name);
+const MovieDB_Search = ({results}) => {
+
+  console.log(results)
+
+  // useEffect(() => {
+  //   if (results[0]) {
+  //     console.log(results[0].name);
+  //   }
+  // }, []);
+  
+//  console.log('movie', movie[0]&& movie[0].name)
+
+  // {aaa &&
+  //   <h5> test : 
+  //     {aaa.map((item, index) => (
+  //      <span key={index}> {item.name}</span>
+  //     ))}
+  //   </h5>
+  //   }
 
   // const [searchList, setSearchList] = useState([]);
   // const [query, setQuery] = useSearchParams();
@@ -28,25 +44,21 @@ const MovieDB_Search = ({ data }) => {
 
   return (
     <>
-      <h1>검색 결과는!</h1>
+      
+      {/* {movie[0]&& movie[0].name} */}
 
-      {/* {data.results && (
-        <div>
-          {data.results.map((item, index) => (
-            <div>
-              <h2>
-                {item.id}. {item.name}
-              </h2>
-              <h4>
-                {" "}
-                장르: {item.genre}
-                {item.adult ? "청불" : "(청소년 관람 가능)"}{" "}
-              </h4>
-              <img width={100} src={item.image} />
-            </div>
-          ))}
-        </div>
-      )} */}
+      {/* {results[0]? 
+           <ul>
+             {results.map((el, index) => (
+              <li key={index}> 
+              {el.id} / 
+              {el.name} / 
+              </li>
+             ))}
+           </ul>
+        : 
+        <div>...</div>
+        } */}
     </>
   );
 };

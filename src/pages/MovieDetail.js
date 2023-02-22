@@ -23,7 +23,7 @@ const MovieDetail = () => {
     // console.log('title', data.title)
     setMovie(data)
   }
-  // console.log('movie', movie)
+  console.log('movie', movie)
 
   useEffect(() => {
     getMovieDetail()
