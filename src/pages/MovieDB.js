@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import MovieInsert from '../components/MovieInsert'
 
 const MovieDB = () => {
 
@@ -29,15 +30,16 @@ const MovieDB = () => {
 
     const getSearch = async () => {
         // let url = `http://localhost:3001/search?name=${keyword}`;
-        let url = `http://localhost:3001/search/actors?actor=${keyword}`;
+        let url = `http://localhost:3001/search?name=${keyword}&actor=${keyword}`;
+        // let url = `http://localhost:3001/search/actors?actor=${keyword}`;
         let response = await fetch(url);
         let data = await response.json();
         setResult(data);
       };
 
-    console.log('result', result)
+    // console.log('result', result)
 
-    const onClickSearch = (event) => {
+    const onClickSearch = () => {
         getSearch();
       };
 
@@ -45,32 +47,44 @@ const MovieDB = () => {
     <>
     <h1>Movie List</h1>
 
+
     <input
       type="search"
-      placeholder="배우 이름을 입력하세요"
+      placeholder="영화 제목 또는 배우명을 입력하세요"
       onChange={onChangeKeyword}
+      style={{width:'250px'}}
     />
     <button onClick={onClickSearch}> 검색</button>
     <br/><br/><br/>
     <div>
         <h4>검색결과..</h4>
-
+      
         {/* {result[0]&& result[0].name} */}
         
         {result[0]&& 
-           <ul>
+           <div>
              {result.map((el, index) => (
-              <li key={index}> 
+              <div key={index}> 
               ID : {el.id} / 
-              영화제목 : {el.name} /
-              출연배우 : {el.actors} /
+              {/* 영화제목 : {el.name} / */}
+              영화제목 : {el.name
+              .replaceAll(keyword, `***${keyword}***`).split("***").map((el)=>(
+                <span style={{color: keyword === el?"blue":"black"}}>
+                  {el}
+                </span>
+              ))} /
+
+              출연배우 :  
+                {el.actors.map((name, index) => (
+                <span key={index} >{name}, </span> 
+              ))} ... / 
+              
               상영시간 : {el.runtime}분
-              <div><img width={50} src={el.image} /></div>
-              </li>
+                <div><img width={50} src={el.image} /></div>
+
+              </div>
              ))}
-           </ul>
-        // : 
-        // <div>...</div>
+           </div>
         }
 
     </div>
@@ -90,6 +104,7 @@ const MovieDB = () => {
                  width={100}
                  src={item.image}/>
                  <div>출연배우: {item.actors}...</div>
+
                  <br/><br/>
              </div>
              ))}
