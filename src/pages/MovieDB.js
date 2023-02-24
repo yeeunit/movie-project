@@ -45,28 +45,25 @@ const MovieDB = () => {
 
   return (
     <>
-    <h1>Movie List</h1>
+    <h1>Movie List</h1> <br/>
 
-
-    <input
+    {/* <input
       type="search"
       placeholder="영화 제목 또는 배우명을 입력하세요"
       onChange={onChangeKeyword}
       style={{width:'250px'}}
     />
-    <button onClick={onClickSearch}> 검색</button>
-    <br/><br/><br/>
+    <button onClick={onClickSearch}> 검색</button> */}
+   
     <div>
-        <h4>검색결과..</h4>
-      
+        {/* <h4>검색결과..</h4> */}
         {/* {result[0]&& result[0].name} */}
         
-        {result[0]&& 
+        {/* {result[0]&& 
            <div>
              {result.map((el, index) => (
               <div key={index}> 
               ID : {el.id} / 
-              {/* 영화제목 : {el.name} / */}
               영화제목 : {el.name
               .replaceAll(keyword, `***${keyword}***`).split("***").map((el)=>(
                 <span style={{color: keyword === el?"blue":"black"}}>
@@ -85,13 +82,10 @@ const MovieDB = () => {
               </div>
              ))}
            </div>
-        }
+        } */}
 
     </div>
-
-
-    <br/><hr/><br/>
-    <h1>DB 리스트</h1>
+    {/* <br/><hr/><br/> */}
     <div  >
     {data &&
         <div className='db_list_style'> 
@@ -103,8 +97,7 @@ const MovieDB = () => {
                  <img 
                  width={100}
                  src={item.image}/>
-                 <div>출연배우: {item.actors}...</div>
-
+                 {/* <div>출연배우: {item.actors}...</div> */}
                  <br/><br/>
              </div>
              ))}
