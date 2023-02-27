@@ -21,7 +21,7 @@ const Search_Movie_Final = () => {
 
   return (
     <>
-    <h5>📌 영화별 캐릭터 확인하기</h5>
+    <h5>📌 배우명으로 영화정보 검색하기</h5>
 
       <input 
       type='search'
@@ -32,17 +32,23 @@ const Search_Movie_Final = () => {
     <button onClick={onClickSearch}> 검색</button>
    
     {/* <br/> &lt;{movieName} &gt; */}
-      {/* <div>
+
+      <div>
       {result&& 
       result.map((el)=>(
-        <div>       
-        <span>"{el.character}" 역</span> 
-        <span> ⇢ {el.sex === 1? <>🙎‍♂️</> : <>🙍‍♀️</>} {el.actor}</span>
+        <div>   
+        <h4>{el.title}</h4>
+        <div><img src = {el.image}  height={100} /></div> 
+        <div>출연 : {el.actor} ,</div> 
+        <div>등장인물 : {el.character} ...</div> 
+        <div>개봉일 : {el.date}</div> 
+        <div>장르: {el.genre}</div> 
+        <div> 등급 : {el.adult ? <>청불</> : <>전체관람</>} </div>
+
         </div>
       ))}
-      </div> */}
+      </div>
       
-    <hr/>
     </>
   )
 }

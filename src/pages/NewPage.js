@@ -13,8 +13,6 @@ const NewPage = () => {
     <Search_Movie_Final />
     <SearchMovie/>
     <SearchWithGenre/>
-    <SearchCharacter/>
-
     </div>
   )
 }
