@@ -5,65 +5,89 @@ const SearchWithActor = () => {
   const [actor, setActor] = useState('')
   const [result, setResult] = useState()
 
-  const onChangeGenre = (event) => {
+  const onChangeActor = (event) => {
     event.preventDefault();
-    setGenre(event.target.value)
+    setActor(event.target.value)
   }
-//   console.log('setGenre', genre)
+  // console.log('setActor', actor)
 
-  const getSearch = async () => {
-    let url = `http://localhost:3001/new?genre=${genre}`
+  const onClickSearch = async () => {
+    let url = `http://localhost:3001/new?actor=${actor}`
     let response = await fetch(url)
     let data = await response.json()
     // console.log(data)
     setResult(data)
   }
-  // console.log('setResult', result)
-  // console.log('setResult', result&&result[0].name)
+  console.log('setResult', result)
 
-  const onClickSearch = () => {
-    getSearch();
-  };
+  // console.log('result.length', result&& result.length)
+    let arr = []
+    let len = result&& result.length
+    let lastmovie = result&& result[len-1].movie
+    console.log('last', lastmovie)
+
+
+    // for (let i=0; i<len; i++){
+    //   if (result[i].movie !== result[i+1].movie) {
+    //       arr.push(result[i].movie)
+    //       console.log('arr', arr)
+    //     }
+    // } 
+  
+  // arr.push(lastmovie)
+  // console.log('arr', arr)
+
 
   return (
     <>
-    <hr/><h5>📌 </h5>
+    <hr/><h5>📌 배우명 검색시 해당 영화 정보와 전체 출연배우 이름 받아오기</h5>
 
-    <form action='/new' method='get' id='movieGenre'
-    style={{display:"inline-block"}} 
-    >
-      <select 
-        name='genre' 
-        form='movieGenre'
-        value={genre}
-        onChange={onChangeGenre}>
-        <option selected disabled>장르를 선택하세요</option>
-        <option value="Animation">애니메이션</option>
-        <option value="Action">액션</option>
-        <option value="Comedy">코미디</option>
-        <option value="Romance">로맨스</option>
-        <option value="Family">가족</option>
-        <option value="Horror">공포</option>
-      </select>
+    <input
+        type='search'
+        placeholder='배우 이름을 입력하세요'
+        style={{width:"200px"}}
+        onChange={onChangeActor}
+    />
+    <button onClick={onClickSearch}> 검색</button> <br/><br/>
 
-        {/* 장르선택 <input type='text' name='name'/> */}
-        {/* <input type='submit'onClick={onClickSearch}/> */}
-    </form>   
-    <button onClick={onClickSearch}>검색</button>
-   
-    <div>
-      {/* {result[0]&&
-        <div>{result.name}</div>
-      } */}
-      <ul>
-      {result&&result.map((el,index)=>
-      (
-        <li>{el.name}</li>
-      ))
-    }
-    </ul>
-    <hr/>
-    </div>
+
+    {/* {result && 
+        result.map((el) => (
+            <div>
+                <div> movie : {el.movie}</div>
+                <div> actor : {el.actor}</div>
+                <div> character : {el.character}</div>
+                <hr/>
+            </div> 
+        ))} */}
+
+
+              {/* movie : {
+                (el[index].movie === el[index+1].movie) ? <>"ㅇ" </> : <>{el.movie}</>
+                } */}
+                {/* <span> {el[index].actor}</span> */}
+
+    {/* 출연배우 :  */}
+    {result && 
+        result.map((el,index) => (
+            <div>
+              <span>{el.movie} </span>
+              {/* <span> 
+              {el[index]&& el[index].movie } 
+                {el[index]&& 
+                  el[index].movie === el[index+1].movie
+                  ? <>{el[index].movie}</>
+                  : <>x</>
+                } 
+              / </span> */}
+              {/* <li> 출연배우 :  */}
+                <span> - &gt {el.actor}</span>
+                {/* </li> */}
+              {/* <li> 역할 : {el.character}</li>  */}
+
+            </div> 
+        ))} 
+
     </>
   )
 }
