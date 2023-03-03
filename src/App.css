@@ -132,3 +132,7 @@ h1 {
   border: 1px solid black;
 
 }
+
+.query_builder{
+  padding: 100px;
+}

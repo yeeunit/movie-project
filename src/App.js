@@ -13,6 +13,7 @@ import MovieDB from "./pages/MovieDB";
 import MovieDB_Detail from "./pages/MovieDB_Detail";
 import MovieDB_Search from "./pages/MovieDB_Search";
 import NewPage from "./pages/NewPage";
+import QueryBuilderPage from "./components/QueryBuilder";
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
         <Route path="/movies/:id" element={<MovieDetail />} />
         <Route path="/moviedb" element={<MovieDB />} />
         <Route path="/moviedb/:id" element={<MovieDB_Detail />} />
-        <Route path="/movie/search?" element={<MovieDB_Search />} />
+        {/* <Route path="/movie/search?" element={<MovieDB_Search />} /> */}
         <Route path="/new" element={<NewPage/>}/>
-
+        <Route path="/querybuilder" element={<QueryBuilderPage/>} />
         {/* <Route path="/todolist" element={<Movies />} /> */}
         {/* <Route path="/calculator" element={<ServerTest />} /> */}
       </Routes>
